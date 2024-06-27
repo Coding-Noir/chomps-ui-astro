@@ -1,0 +1,19 @@
+---
+import { twMerge } from 'tailwind-merge'
+interface Props {
+  className?: string
+  label: string
+  href?: string
+}
+
+const { className = '', label = 'Button', href = '/', ...rest } = Astro.props
+---
+
+<a class={twMerge('btn', className)} href={href} title={label} {...rest}>
+  {label}
+</a>
+
+<style>
+  .btn {
+  }
+</style>

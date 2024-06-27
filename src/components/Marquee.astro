@@ -1,0 +1,104 @@
+---
+import { twMerge } from 'tailwind-merge'
+interface Props {}
+
+const {} = Astro.props
+
+const logoItems = [
+  {
+    imgUrl: '/src/images/ELogo.avif'
+  },
+  {
+    imgUrl: '/src/images/forbes-logo.png'
+  },
+  {
+    imgUrl: '/src/images/Business_Insider.avif'
+  },
+  {
+    imgUrl: '/src/images/etntlogo.avif'
+  },
+  {
+    imgUrl: '/src/images/food-network.avif'
+  },
+  {
+    imgUrl: '/src/images/fast-company-logo.avif'
+  },
+  {
+    imgUrl: '/src/images/ELogo.avif'
+  },
+  {
+    imgUrl: '/src/images/forbes-logo.png'
+  },
+  {
+    imgUrl: '/src/images/Business_Insider.avif'
+  },
+  {
+    imgUrl: '/src/images/etntlogo.avif'
+  },
+  {
+    imgUrl: '/src/images/food-network.avif'
+  },
+  {
+    imgUrl: '/src/images/fast-company-logo.avif'
+  },
+  {
+    imgUrl: '/src/images/ELogo.avif'
+  },
+  {
+    imgUrl: '/src/images/forbes-logo.png'
+  },
+  {
+    imgUrl: '/src/images/Business_Insider.avif'
+  },
+  {
+    imgUrl: '/src/images/etntlogo.avif'
+  },
+  {
+    imgUrl: '/src/images/food-network.avif'
+  },
+  {
+    imgUrl: '/src/images/fast-company-logo.avif'
+  },
+  {
+    imgUrl: '/src/images/ELogo.avif'
+  },
+  {
+    imgUrl: '/src/images/forbes-logo.png'
+  },
+  {
+    imgUrl: '/src/images/Business_Insider.avif'
+  },
+  {
+    imgUrl: '/src/images/etntlogo.avif'
+  },
+  {
+    imgUrl: '/src/images/food-network.avif'
+  },
+  {
+    imgUrl: '/src/images/fast-company-logo.avif'
+  }
+]
+---
+
+<section class={twMerge('')}>
+  <div class="">
+    {logoItems.map((logo) => <img src={logo.imgUrl} alt="" class="" />)}
+    {logoItems.map((logo) => <img src={logo.imgUrl} alt="" class="" />)}
+    {logoItems.map((logo) => <img src={logo.imgUrl} alt="" class="" />)}
+  </div>
+</section>
+
+<style>
+  .logo::before,
+  .logo::after {
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>

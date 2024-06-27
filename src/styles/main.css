@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Mindset';
+  src: url('/fonts/Mindset.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Franklin Gothic Book';
+  src: url('/fonts/ITCFranklinGothicStd-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Franklin Gothic Md';
+  src: url('/fonts/ITCFranklinGothicStd-MdCd.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Colby';
+  src: url('/fonts/Colby.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Colby';
+  src: url('/fonts/ColbyBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #d02c2f;
+  --color-bg: #fef5f0;
+  --color-sky-blue: #c9ebf7;
+  --color-white: #fff;
+}
+
+::selection {
+  @apply bg-primary text-white;
+}
+::-moz-selection {
+  @apply bg-primary text-white;
+}
+
+html {
+  @apply scroll-smooth text-[62.5%] leading-[1.6];
+}
+
+body {
+  @apply flex h-screen flex-col font-body text-[1.6rem] tracking-[0] text-black antialiased;
+}
+
+main {
+  @apply h-full;
+}
+
+a {
+  @apply inline-block;
+}
+
+.animate-pause:hover {
+  animation-play-state: paused;
+}

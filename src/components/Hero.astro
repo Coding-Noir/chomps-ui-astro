@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets'
+import Container from './Container.astro'
+import heroImg from '../images/hero.webp'
+import heroImgMobile from '../images/hero-mobile.webp'
+import Button from './Button.astro'
+import SubTitle from './SubTitle.astro'
+
+interface Props {}
+
+const {} = Astro.props
+---
+
+<section class="">
+  <div class="">
+    <Image src={heroImg} alt="" class="" />
+  </div>
+
+  <Container className="">
+    <div class="">
+      <h1 class="">
+        SNACKING <br /> MADE SIMPLE
+      </h1>
+
+      <SubTitle className="">
+        Tasty meat sticks packed with mouthwatering flavor and only the best
+        real ingredients.
+      </SubTitle>
+
+      <Button href="/" label="Start Snackin'" className="" />
+    </div>
+  </Container>
+
+  <div class="">
+    <Image src={heroImgMobile} alt="" />
+  </div>
+</section>
+
+<style>
+  .hero-img {
+    & img {
+    }
+  }
+
+  .hero-img-mobile {
+    & img {
+    }
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import { twMerge } from 'tailwind-merge'
+import LottieHeading from './Lottie/LottieHeading.astro'
+
+interface Props {
+  as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  className?: string
+  showLeftLottie?: boolean
+  showRightLottie?: boolean
+}
+
+const {
+  className = '',
+  as: Element = 'h1',
+  showLeftLottie = false,
+  showRightLottie = false
+} = Astro.props
+---
+
+<Element class:list={twMerge('', className)}>
+  {showLeftLottie && <LottieHeading className="" />}
+
+  <slot />
+
+  {showRightLottie && <LottieHeading className="" />}
+</Element>

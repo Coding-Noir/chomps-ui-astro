@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets'
+import FuelImage from '../images/fuel-for-you.webp'
+import Container from './Container.astro'
+import SectionTitle from './SectionTitle.astro'
+import SubTitle from './SubTitle.astro'
+import Button from './Button.astro'
+
+interface Props {
+  title?: string
+  body?: string
+  href?: string
+}
+
+const { href, title, body } = Astro.props
+---
+
+<section class="">
+  <Container className="">
+    <div class="">
+      <Image src={FuelImage} alt="" width={620} height={750} class="" />
+    </div>
+
+    <div class="">
+      <div class="">
+        <div class="">
+          <dotlottie-player
+            src="/src/data/lottie/lottie-arrow.json"
+            background="transparent"
+            speed="1"
+            class=""
+            autoplay></dotlottie-player>
+        </div>
+
+        <div class="">
+          <h2 class="">Fuel For You and All You Do</h2>
+
+          <SubTitle as="p" className="">
+            Give your inner nutritionist the day off. Our sticks are packed with
+            flavor and free of the icky stuff. Keto friendly, Paleo certified,
+            and gluten free!
+          </SubTitle>
+        </div>
+
+        <Button href="/" label="Shop All" className="" />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .image-content__arrow {
+  }
+</style>

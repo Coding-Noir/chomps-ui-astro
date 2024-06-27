@@ -1,0 +1,23 @@
+---
+import Container from './Container.astro'
+interface Props {
+  text: string
+  href?: string
+}
+
+const { href = '#', text = 'Place Announcement here' } = Astro.props
+---
+
+<div class="">
+  <Container>
+    {
+      href ? (
+        <a href={href} class="">
+          {text}
+        </a>
+      ) : (
+        <p>{text}</p>
+      )
+    }
+  </Container>
+</div>

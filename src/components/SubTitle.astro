@@ -1,0 +1,13 @@
+---
+import { twMerge } from 'tailwind-merge'
+interface Props {
+  as: 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
+  className?: string
+}
+
+const { className = '', as: Element = 'p' } = Astro.props
+---
+
+<Element class:list={twMerge('', className)}>
+  <slot />
+</Element>

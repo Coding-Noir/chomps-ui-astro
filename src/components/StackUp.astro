@@ -1,0 +1,128 @@
+---
+import { Image } from 'astro:assets'
+import SlideImg from '../images/scroll-Original_Beef_Scroll.webp'
+import Button from './Button.astro'
+import Container from './Container.astro'
+import SectionTitle from './SectionTitle.astro'
+import SubTitle from './SubTitle.astro'
+import IconArrowSlide from './IconArrowSlide.astro'
+
+interface Props {
+  title?: string
+  imgUrl?: string
+  href?: string
+}
+
+const slideImages = [
+  {
+    imgUrl: '/src/images/scroll-Original_Beef_Scroll.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Taco_Beef.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Turkey.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Sea_Salt_Beef.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Italian_Beef.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Pepperoni_Seasoned_Turkey.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Jalapeno_Turkey.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Salt_Pepper_Venison.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Jalapeno_Beef.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Habanero-Beef.webp',
+    title: 'Original Beef',
+    link: '/'
+  },
+  {
+    imgUrl: '/src/images/scroll-Original_Beef_Scroll.webp',
+    title: 'Original Beef',
+    link: '/'
+  }
+]
+---
+
+<section class="">
+  <Container className="">
+    <SectionTitle as="h2" className="" showRightLottie={true}>
+      These Snacks <br class="" /> Stack Up
+    </SectionTitle>
+
+    <SubTitle className="">
+      Who said snacks need to be complicated? Stick to the basics: zero sugar
+      and plenty of protein, in a range of Chompable flavors. Nutrition your
+      taste buds will understand.
+    </SubTitle>
+
+    <Button href="/" label="Start Snackin'" className="" />
+  </Container>
+
+  <div class="">
+    {
+      slideImages.map((image) => (
+        <a href={image.link} title={image.title} class="">
+          <span class="">{image.title}</span>
+          <Image
+            src={image.imgUrl}
+            alt={image.title}
+            class=""
+            width={216}
+            height={497}
+          />
+        </a>
+      ))
+    }
+
+    <Container className="">
+      <button type="button" class="">
+        <IconArrowSlide />
+      </button>
+
+      <ul><li>O</li></ul>
+
+      <button type="button" class="">
+        <IconArrowSlide />
+      </button>
+    </Container>
+  </div>
+</section>
+
+<style>
+  .slide-arrow {
+  }
+
+  @scope (.slide-arrow) {
+    svg {
+    }
+  }
+</style>

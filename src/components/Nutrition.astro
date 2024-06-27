@@ -1,0 +1,80 @@
+---
+import Wave from './Wave.astro'
+import Container from './Container.astro'
+import SectionTitle from './SectionTitle.astro'
+
+interface Props {
+  showWave?: boolean
+}
+
+const { showWave = true } = Astro.props
+
+const nutiritionItems = [
+  {
+    heading: '9-10g of protein',
+    url: '/src/data/lottie/protein.json'
+  },
+  {
+    heading: 'Zero sugar',
+    url: '/src/data/lottie/no-sugar.json'
+  },
+  {
+    heading: 'Keto friendly',
+    url: '/src/data/lottie/keto-friendly.json'
+  },
+  {
+    heading: 'Low-carb',
+    url: '/src/data/lottie/low-carb.json'
+  },
+  {
+    heading: 'Allergy friendly',
+    url: '/src/data/lottie/allergy-friendly.json'
+  },
+  {
+    heading: 'No Fillers',
+    url: '/src/data/lottie/no-filler.json'
+  }
+]
+---
+
+<section class="">
+  {
+    showWave && (
+      <div class="">
+        <Wave color="" />
+      </div>
+    )
+  }
+
+  <div class="">
+    <Container className="">
+      <SectionTitle
+        as="h2"
+        className=""
+        showLeftLottie={true}
+        showRightLottie={true}
+      >
+        Nutrition your taste buds <br /> will understand.
+      </SectionTitle>
+
+      <div class="">
+        {
+          nutiritionItems.map((item) => (
+            <div class="">
+              <div class="">
+                <dotlottie-player
+                  src={item.url}
+                  background="transparent"
+                  speed="1"
+                  loop
+                  autoplay
+                />
+              </div>
+              <h3 class="">{item.heading}</h3>
+            </div>
+          ))
+        }
+      </div>
+    </Container>
+  </div>
+</section>

@@ -1,0 +1,132 @@
+---
+import AnnouncementBar from './AnnouncementBar.astro'
+import IconChevronDown from './IconChevronDown.astro'
+import ChompsLogo from './ChompsLogo.astro'
+import Container from './Container.astro'
+import IconUser from './IconUser.astro'
+import IconCart from './IconCart.astro'
+import IconHamburger from './IconHamburger.astro'
+
+interface Props {
+  showAnnouncementBar?: boolean
+}
+
+const { showAnnouncementBar = false } = Astro.props
+
+const mainMenu = [
+  {
+    label: 'Shop',
+    url: '/',
+    subMenu: true
+  },
+  {
+    label: 'Learn',
+    url: '/',
+    subMenu: true
+  },
+  {
+    label: 'Subscribe & Save',
+    url: '/',
+    subMenu: false
+  }
+]
+
+const mainSettingsMenu = [
+  {
+    label: 'Store Locator',
+    url: '/'
+  },
+  {
+    label: 'Rewards',
+    url: '/'
+  }
+]
+---
+
+<header class="">
+  {
+    showAnnouncementBar && (
+      <AnnouncementBar text="SUBSCRIBE TO SAVE 10% ON EVERY ORDER! 💰" />
+    )
+  }
+
+  <nav class="">
+    <Container className="">
+      <div class="">
+        <button>
+          <IconHamburger />
+        </button>
+      </div>
+      <div class="">
+        <a href="/" class="">
+          <ChompsLogo />
+        </a>
+      </div>
+
+      <ul class="">
+        {
+          mainMenu.map((item) => (
+            <li>
+              {item.subMenu ? (
+                <button class="" type="button" aria-label={item.label}>
+                  {item.label}{' '}
+                  <span>
+                    <IconChevronDown />
+                  </span>
+                </button>
+              ) : (
+                <a href={item.url} class="">
+                  {item.label}
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="">
+        <ul class="">
+          {
+            mainSettingsMenu.map((item) => (
+              <li>
+                <a class="" href={item.url}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <ul class="">
+          <li class="">
+            <button class="">
+              <IconCart />
+
+              <span class="">0</span>
+            </button>
+          </li>
+          <li>
+            <button>
+              <IconUser />
+            </button>
+          </li>
+        </ul>
+      </div>
+    </Container>
+  </nav>
+</header>
+
+<style>
+  header {
+    & .main-links {
+    }
+    & ul {
+    }
+  }
+  .main-menu {
+    & li:first-of-type .menu-link {
+    }
+  }
+
+  .menu-link {
+  }
+</style>

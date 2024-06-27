@@ -1,0 +1,22 @@
+---
+import { twMerge } from 'tailwind-merge'
+interface Props {
+  className?: string
+  color?: string
+}
+
+const { className = '', color = 'text-black' } = Astro.props
+---
+
+<div class={twMerge('', className)}>
+  <svg
+    class={twMerge('', color)}
+    viewBox="0 0 1440 138"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 18.9933C289.026 -30.9252 802.832 35.2142 1440 18.9933V137.278H0V18.9933Z"
+      fill="currentColor"></path>
+  </svg>
+</div>
